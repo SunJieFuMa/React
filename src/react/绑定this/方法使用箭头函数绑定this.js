@@ -4,11 +4,15 @@ import ReactDOM from 'react-dom'
 class Welcome extends React.Component {
 
     handleClick = (e) => {
+        console.log(e);
         console.log('handleClick' + this.props.text);
+    };
+    handlePress = () => {
+        console.log('handlePress' + this.props.text);
     };
 
     render() {
-        return <div onClick={this.handleClick}>Hello,World</div>
+        return <div onClick={this.handleClick} onDoubleClick={this.handlePress}>Hello,World</div>
     }
 }
 
