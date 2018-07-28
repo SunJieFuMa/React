@@ -5,15 +5,12 @@ import ListStore from '../stores/ListStore'
 
 
 class MyButtonController extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {items: ListStore.getAll()};
         this._onChange = this._onChange.bind(this);
     }
-
     componentDidMount() {
-        console.log("挂载完成");
         ListStore.addChangeListener(this._onChange);
     }
 
@@ -22,9 +19,7 @@ class MyButtonController extends React.Component {
     }
 
     _onChange() {
-        this.setState({
-            items: ListStore.getAll()
-        })
+        this.setState({items: ListStore.getAll()})
     }
 
      createNewItem(event) {
@@ -32,12 +27,7 @@ class MyButtonController extends React.Component {
     }
 
     render() {
-        return <MyButton
-            items={this.state.items}
-            onClick={this.createNewItem}
-        />
+        return <MyButton items={this.state.items} onClick={this.createNewItem}/>
     }
 }
-
-
 export default MyButtonController;
