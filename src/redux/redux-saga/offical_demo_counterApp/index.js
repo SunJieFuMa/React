@@ -24,7 +24,9 @@ function render() {
             onIncrement={() => store.dispatch({type: 'INCREMENT'})}
             onDecrement={() => store.dispatch({type: 'DECREMENT'})}
             onDecrementAsync={() => store.dispatch({type: 'ONDECREMENT_ASYNC'})}
-            onIncrementAsync={() => store.dispatch({type: 'INCREMENT_ASYNC'})}/>,
+            onIncrementAsync={() => store.dispatch({type: 'INCREMENT_ASYNC'})}
+            onReset={() => store.dispatch({type: 'ONRESET', text: "我就给你重置"})}
+        />,
         document.getElementById('root')
     )
 }

@@ -8,6 +8,8 @@ export default function (state = 0, action) {
             return state;
         case 'ONDECREMENT_ASYNC':
             return state;
+        case 'ONRESET':
+            return action.text;
         default:
             return state;
     }
